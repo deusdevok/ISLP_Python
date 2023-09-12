@@ -15,3 +15,8 @@
    **b)** Classification (success or failure). Prediction. `n=20`, `p=13` (price charged, marketing budget, competition price and ten other variables).
 
    **c)** Regression (a percent change is a floating variable). Prediction. `n=4*12=48`, `p=3` (US, British, German %).
+
+3. Bias-variance decomposition
+   **a)** Sketch of bias (squared), variance, training error, test error and bayes curves.
+
+   ![curves](ex3curves.png "Sketch curves")
