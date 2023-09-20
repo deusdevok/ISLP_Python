@@ -31,6 +31,7 @@
    - **Training error**: The MSE on the training data set. As the model flexibility increases, the error in the training set should decrease. The model learns about the variations in the training set as the model flexibility increases, but the prediction on the test set would begin to fail, making the test error increase (which is the one we want to reduce).
 
 4. Real life applications for statistical learning.
+   
    **a)** Classification
    - The data consists of a set of cats and dogs images. The goal is to predict weather a new image can be classified as a cat or a dog. The response can be a categorical variable (cat / dog). The predictors are each of the images in the training set (each image should be encoded somehow). The goal of this application is prediction.
    - The data consists of a table with information about page visitors, such as age, location, gender, education, interests and which ad the visitor had clicked on (furniture sales page, tech blog, news, etc). We wish to predict what type of ad should be shown to the visitor given the predictors. The response is the type of ad. The goal is prediction.
