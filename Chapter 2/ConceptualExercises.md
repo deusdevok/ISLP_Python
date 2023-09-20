@@ -19,7 +19,7 @@
 3. Bias-variance decomposition
    **a)** Sketch of bias (squared), variance, training error, test error and bayes curves.
 
-   ![curves](/Chapter%202/ex3curves.png "Sketch curves")
+   ![curves](./ex3curves.png "Sketch curves")
 
    **b)** Each term represent the Mean Squared Error of some term. The MSE is defined as $MSE=\frac{1}{n}\sum_{i=1}^n (y_i - \hat{f}(x_i))^2$.
 
