@@ -9,7 +9,8 @@
 
    **d)** When the variance of the error terms $\sigma^2=Var(\epsilon)$ is extremely high, this could indicate that the data contains too much noise. Then, a flexible method could try to pick up those noises but won't be better at generalizing. An inflexible method should work better for predicting new observations.
 
-2. Classification or Regression? Inference or Prediction? Provide `n` and `p`
+2. Classification or Regression? Inference or Prediction? Provide `n` and `p`.
+   
    **a)** Regression (CEO salary is a continuous variable). Inference, because the goal is to understand which factors affect salary instead of making predictions. `n=500`, `p=3` (profit, number of employees and industry).
 
    **b)** Classification (success or failure). Prediction. `n=20`, `p=13` (price charged, marketing budget, competition price and ten other variables).
