@@ -48,6 +48,6 @@ We have now all three terms. Putting all together:
 
 $$E[(Y-\hat{Y})^2]=Var(\hat{Y})+E^2[\hat{Y}]+f^2+\sigma^2-2fE[\hat{Y}]$$
 
-$$E[(Y-\hat{Y})^2]=(f-E[\hat{Y}])^2+Var(\hat{Y})+\sigma^2$$
+$$\boxed{E[(Y-\hat{Y})^2]=(f-E[\hat{Y}])^2+Var(\hat{Y})+\sigma^2}$$
 
 Where $(f-E[\hat{Y}])^2$ is called the *Bias*.
