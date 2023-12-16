@@ -28,7 +28,10 @@ $$RSS = \sum[(y_i-\bar{y})-\beta_1(x_i-\bar{x})]^2$$
 
 Taking the derivative with respect to $\beta_1$:
 
-$$\frac{\partial}{\partial \beta_1}RSS = -2\sum[(y_i-\bar{y})-\beta_1(x_i-\bar{x})](x_i-\bar{x}) = 0$$
+$$
+\frac{\partial}{\partial \beta_1}RSS = -2\sum\left[(y_i-\bar{y})-\beta_1(x_i-\bar{x})\right]\left(x_i-\bar{x}\right) = 0
+$$
+
 
 $$\sum(y_i-\bar{y})(x_i-\bar{x}) - \beta_1\sum(x_i-\bar{x})^2 = 0$$
 
