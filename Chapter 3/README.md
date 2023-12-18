@@ -4,6 +4,18 @@
 
 RSS: Residual Sum of Squares
 
+RSE: Residual Standard Error (estimate of $\sigma$)
+
+$$RSE = \sqrt{RSS/(n-2)}$$
+
+TSS: Total Sum of Squares
+
+AIK: Akaike Information Criterion
+
+BIC: Bayesian Information Criterion
+
+VIF: Variance Inflation Factor
+
 ## Minimizing RSS
 
 Using the definition of Residual Sum of Squares:
