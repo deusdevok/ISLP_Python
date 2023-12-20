@@ -38,4 +38,16 @@
       * iv) **False**. If GPA is high enough, as seen in **iii)** College graduates don't earn more than High school graduates.
 
    b) For a College graduate with IQ of 110 and GPA of 4.0, the prediction is:
-   $$S = $$
+   $$S = 50 + 20\times 4.0 + 0.07\times 110 + 35\times 1 + 0.01\times 4.0\times 110 - 10\times 4.0\times 1$$
+
+   $$S = 137.1 \text{ (thousands USD)}$$
+
+   c) **False**. The value can be significant depending on the values of GPA and IQ. One measure that can tell weather the interaction is significant or not is the p-value, not the coefficient.
+
+4. Fitting two models: linear and cubic.
+   a) For the training data, adding more parameters to the model will always decrease the RSS. This is called *overfitting* the model.
+   b) For the test data, on the other hand, it is highly possible that the RSS will increase for the cubic model. Because we know that the true relashionship is in fact linear, adding more variables to the model will not fit the test data well, and thus increase the RSS.
+   c) If we know that the true relashionship is not linear, then the RSS for the cubic model in the training data should be lower than for the linear model. Adding more parameters to the model should fit the data better. (This is the same as **a**: The RSS for the training data always decrease when adding more parameters to the model).
+   d) For the test data, RSS should also be smaller for the cubic model. This is because the true relashionship is not linear, and then adding more parameters to the model will fit the test data better.
+
+5. 
