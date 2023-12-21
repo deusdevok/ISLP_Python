@@ -50,4 +50,36 @@
    c) If we know that the true relashionship is not linear, then the RSS for the cubic model in the training data should be lower than for the linear model. Adding more parameters to the model should fit the data better. (This is the same as **a**: The RSS for the training data always decrease when adding more parameters to the model).
    d) For the test data, RSS should also be smaller for the cubic model. This is because the true relashionship is not linear, and then adding more parameters to the model will fit the test data better.
 
-5. 
+5. Linear regression without intercept.
+
+   $$\hat{y_i} = x_i \hat{\beta}$$
+
+   If $\bar{x}=\bar{y}=0$, then we can write:
+
+   $$\beta = \frac{\sum_i x_i y_i}{\sum_j x_j^2}$$
+
+   Then:
+
+   $$y_i = x_i \frac{\sum_j x_j y_j}{\sum_k x_k^2}$$
+
+   $$y_i = \sum_j \frac{x_i x_j}{\sum_k x_k^2}y_j$$
+
+   $$y_i = \sum_j a_{j(i)} y_j$$
+
+   Then, we can see that $a_j$ (with a subindex $i$) is:
+
+   $$a_{j(i)} = \frac{x_i x_j}{\sum_k x_k^2}$$
+
+6. Using the coefficients from the least squares:
+
+   $$y = \beta_0 + \beta_1 x$$
+
+   $$y(\bar{x}) = \beta_0 + \beta_1 \bar{x}$$
+
+   Since $\beta_0 = \bar{y} - \beta_1\bar{x}$,
+
+   $$y(\bar{x}) = (\bar{y} - \beta_1 \bar{x}) + \beta_1 \bar{x}$$
+
+   $$y(\bar{x}) = \bar{y}$$
+
+   Then, the least squares line passes through $(\bar{x}, \bar{y}).$

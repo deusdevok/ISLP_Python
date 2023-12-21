@@ -16,6 +16,8 @@ BIC: Bayesian Information Criterion
 
 VIF: Variance Inflation Factor
 
+OLS: Ordinary Least Squares
+
 ## Minimizing RSS
 
 Using the definition of Residual Sum of Squares:
