@@ -28,7 +28,7 @@
 
     $$p_k(x) = \frac{\pi_k f_k(x)}{\sum_{l=1}^K \pi_l f_l(x)}$$
 
-    For the Linear Discriminant Analysis (LDA) with one predictor ($p=1$), we assume $p_k(x)$ to be Gaussian (normal). We also assume that all classes share the same variance, called $\sigma^2$. Then:
+    For the Linear Discriminant Analysis (LDA) with one predictor ($p=1$), we assume $f_k(x)$ to be Gaussian (normal). We also assume that all classes share the same variance, called $\sigma^2$. Then:
 
     $$p_k(x) = \frac{\pi_k \frac{1}{\sqrt{2\pi} \sigma}e^{-\frac{1}{2\sigma^2}(x-\mu_k)^2}}{\sum_{l=1}^K \pi_l \frac{1}{\sqrt{2\pi} \sigma}e^{-\frac{1}{2\sigma^2}(x-\mu_l)^2}}$$
 
@@ -45,3 +45,32 @@
     $$\boxed{\delta_k(x) = x\frac{\mu_k}{\sigma^2} - \frac{\mu_k^2}{2\sigma^2} + \log(\pi_k)}$$
 
     This expression is linear in *x*, hence the name *Linear* Discriminant Analysis. The *discriminant* refers to the $\delta_k(x)$ function to be maximized.
+
+3. Quadratic Discriminant Analysis. Now we assume $X \sim N(\mu_k, \sigma_k^2)$:
+
+    $$f_k(x) = \frac{1}{\sqrt{2\pi} \sigma_k}e^{-\frac{1}{2\sigma_k^2}(x-\mu_k)^2}$$
+
+    Now we want to maximize:
+
+    $$p_k(x) = \frac{\pi_k \frac{1}{\sqrt{2\pi} \sigma_k}e^{-\frac{1}{2\sigma_k^2}(x-\mu_k)^2}}{\sum_{l=1}^K \pi_l \frac{1}{\sqrt{2\pi} \sigma_l}e^{-\frac{1}{2\sigma_l^2}(x-\mu_l)^2}}$$
+
+    The $\sqrt{2\pi}$ can be cancelled out:
+
+    $$p_k(x) = \frac{\pi_k \frac{1}{\sigma_k}e^{-\frac{1}{2\sigma_k^2}(x-\mu_k)^2}}{\sum_{l=1}^K \pi_l \frac{1}{\sigma_l}e^{-\frac{1}{2\sigma_l^2}(x-\mu_l)^2}}$$
+
+    Taking logarithms:
+
+    $$\log(p_k(x)) = \log(\pi_k) - \log(\sigma_k) - \frac{(x-\mu_k)^2}{2\sigma_k^2} - \log\left(\sum_{l=1}^K [\cdots]\right)$$
+
+    The last term is independent of *k*, so the discriminant becomes:
+
+    $$\boxed{\delta_k(x) = - \frac{(x-\mu_k)^2}{2\sigma_k^2} + \log(\pi_k) - \log(\sigma_k)}$$
+
+    For this case, the discriminant becomes quadratic in *x*.
+
+4. KNN Curse of Dimensionality.
+  a) $(0.65-0.55)/1 = 0.10$ which corresponds to the $10\%$ of the data.
+  b) $(0.65-0.55)\cdot (0.4-0.3)\cdot 1 = 0.01$ which corresponds to the $1\%$ of the data.
+  c) $0.1^{100} = \frac{1}{10^{100}}$ is the fraction of the available observations used to make a prediction.
+  d) When the number of features increases, this methods makes the available observations near a given test observations decreases exponentially. In the limit, it tends to zero: $\lim_{p\to \infty} 0.1^p = 0$.
+  e) What is the length of each side of the hypercube in *p* dimensions so that the volume is the 10% of the hypercube of length 1? $a^p = 0.1$, then $a = 0.1^{1/p}$
