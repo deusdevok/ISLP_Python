@@ -73,4 +73,35 @@
   b) $(0.65-0.55)\cdot (0.4-0.3)\cdot 1 = 0.01$ which corresponds to the $1\%$ of the data.
   c) $0.1^{100} = \frac{1}{10^{100}}$ is the fraction of the available observations used to make a prediction.
   d) When the number of features increases, this methods makes the available observations near a given test observations decreases exponentially. In the limit, it tends to zero: $\lim_{p\to \infty} 0.1^p = 0$.
-  e) What is the length of each side of the hypercube in *p* dimensions so that the volume is the 10% of the hypercube of length 1? $a^p = 0.1$, then $a = 0.1^{1/p}$
+  e) What is the length of each side of the hypercube in *p* dimensions so that the volume is the 10% of the hypercube of length 1? $a^p = 0.1$, then $a = 0.1^{1/p}$.
+
+5. Differences between LDA and QDA.
+  a) On the training set, QDA would perform better than LDA (possibly overfitting). On the test set, LDA performs better, since the Bayes decision boundary is linear.
+  b) If the Bayes decision boundary is non-linear, then QDA would perform better than LDA, both on the training and test sets. This is assuming the non-linearity is close to quadratic. In other cases, QDA may perform poorly than LDA.
+  c) If the sample size *n* is very large, one would expect QDA to perform better than LDA.
+  d) **False**. What we can achieve by using QDA on a linear Bayes decision boundary is an increase in performance in the *training* set. But in the *test* set it would probably perform worse, because of overfitting.
+
+6. The logistic regression model is:
+  $$p(X) = \frac{e^{\beta_0 + \beta_1 X_1 + \beta_2 X_2}}{1 + e^{\beta_0 + \beta_1 X_1 + \beta_2 X_2}}$$
+
+  a) Plugging the values:
+
+  $$p(X) = \frac{e^{-6 + 0.05\cdot 40 + 1\cdot 3.5}}{1 + e^{-6 + 0.05\cdot 40 + 1\cdot 3.5}} = 0.3775 = 37.8\%$$
+
+  b) Solve for $X_1$:
+
+  $$p(X) = \frac{e^{-6 + 0.05\cdot X_1 + 1\cdot 3.5}}{1 + e^{-6 + 0.05\cdot X_1 + 1\cdot 3.5}} = 0.5$$
+
+  $$\frac{e^{-2.5 + 0.05\cdot X_1}}{1 + e^{-2.5 + 0.05\cdot X_1}} = 0.5$$
+
+  $$e^{-2.5 + 0.05\cdot X_1} = 0.5\cdot (1 + e^{-2.5 + 0.05\cdot X_1})$$
+
+  $$0.5\cdot e^{-2.5 + 0.05\cdot X_1} = 0.5$$
+
+  $$e^{-2.5 + 0.05\cdot X_1} = 1$$
+
+  Applying logarithm to both sides:
+
+  $$-2.5 + 0.05\cdot X_1 = 0$$
+
+  $$X_1 = 50$$
