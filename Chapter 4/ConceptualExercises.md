@@ -105,3 +105,42 @@
   $$-2.5 + 0.05\cdot X_1 = 0$$
 
   $$X_1 = 50$$
+
+7. Using Bayes theorem
+
+  $$P(Y=yes|X) = \frac{P(X|Y=yes)\cdot P(Y=yes)}{P(X)}$$
+
+  $$P(Y=yes|X) = \frac{P(X|Y=yes)\cdot P(Y=yes)}{\sum_{k=(yes,no)} P(X|Y=k)\cdot P(Y=k)}$$
+
+  $$P(Y=yes|X) = \frac{f_{k=yes}(x)\cdot P(Y=yes)}{\sum_k f_k(x)\cdot P(Y=k)}$$
+
+  $$P(Y=yes|X) = \frac{0.8\cdot\frac{1}{\sqrt{2\pi\sigma^2}}e^{-(x-10)^2/2\sigma^2}}{0.8\cdot\frac{1}{\sqrt{2\pi\sigma^2}}e^{-(x-10)^2/2\sigma^2} + 0.2\cdot\frac{1}{\sqrt{2\pi\sigma^2}}e^{-(x-0)^2/2\sigma^2}}$$
+
+  After some algebra:
+
+  $$P(Y=yes|X) = \frac{1}{1 + 0.25\cdot e^{[-x^2+(x-10)^2]/2\sigma^2}}$$
+
+  Using $x=4$ and $\sigma^2=36$:
+
+  $$\boxed{P(Y=yes|X=4) = 0.752}$$
+
+8. In the case of 1-NN (KNN with K=1), the training error is 0%. This is because when the algorithm looks for the one training data point that is closest to itself, it will find the same point. Therefore, the overall error in the train set is equal to 0 (perfect fit). If the average between the train and test error rates is 18%, then the test error rate is 36% (double). The 1-NN algorithm is clearly overfitting the data. Then, we should prefer logistic regression because the test error rate is 30%, which is lower than 36%.
+
+9. The expression for the odds is:
+  $$odds = \frac{p}{1-p}$$
+
+  a) Compute probability given odds:
+
+  $$0.37 = \frac{p}{1-p}$$
+
+  $$0.37\cdot(1-p) = p$$
+
+  $$0.37 = 1.37\cdot p$$
+
+  $$\boxed{p = 0.27 = 27\%}$$
+
+  b) Compute odds given probability:
+
+  $$odds = \frac{0.16}{1-0.16}$$
+
+  $$\boxed{odds = 0.19 = 19\%}$$
