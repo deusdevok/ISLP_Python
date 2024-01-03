@@ -144,3 +144,38 @@
   $$odds = \frac{0.16}{1-0.16}$$
 
   $$\boxed{odds = 0.19 = 19\%}$$
+
+12. Odds. Log odds is also called *logit*.
+  a) $$odds = \frac{p}{1-p} = \frac{\frac{e^{\beta_0+\beta_1 x}}{1+e^{\beta_0+\beta_1 x}}}{1-\frac{e^{\beta_0+\beta_1 x}}{1+e^{\beta_0+\beta_1 x}}}$$
+
+  $$odds = \frac{\frac{e^{\beta_0+\beta_1 x}}{1+e^{\beta_0+\beta_1 x}}}{\frac{1+e^{\beta_0+\beta_1 x}-e^{\beta_0+\beta_1 x}}{1+e^{\beta_0+\beta_1 x}}} = e^{\beta_0+\beta_1 x}$$
+
+  $$\boxed{\log(odds) = \beta_0+\beta_1 x}$$
+
+  b) $$odds = \frac{p}{1-p} = \frac{\frac{\exp(\alpha_{orange_0} + \alpha_{orange_1}x)}{\exp(\alpha_{orange_0} + \alpha_{orange_1}x) + \exp(\alpha_{apple_0} + \alpha_{apple_1}x)}}{1-\frac{\exp(\alpha_{orange_0} + \alpha_{orange_1}x)}{\exp(\alpha_{orange_0} + \alpha_{orange_1}x) + \exp(\alpha_{apple_0} + \alpha_{apple_1}x)}}$$
+
+  $$odds = \frac{\frac{\exp(\alpha_{orange_0} + \alpha_{orange_1}x)}{\exp(\alpha_{orange_0} + \alpha_{orange_1}x) + \exp(\alpha_{apple_0} + \alpha_{apple_1}x)}}{\frac{\exp(\alpha_{orange_0} + \alpha_{orange_1}x) + \exp(\alpha_{apple_0} + \alpha_{apple_1}x) - \exp(\alpha_{orange_0} + \alpha_{orange_1}x)}{\exp(\alpha_{orange_0} + \alpha_{orange_1}x) + \exp(\alpha_{apple_0} + \alpha_{apple_1}x)}}$$
+
+  $$odds = \frac{\exp(\alpha_{orange_0} + \alpha_{orange_1}x)}{\exp(\alpha_{apple_0} + \alpha_{apple_1}x)}$$
+
+  $$\boxed{\log(odds) = (\alpha_{orange_0}-\alpha_{apple_0}) + (\alpha_{orange_1}-\alpha_{apple_1})\cdot x}$$
+
+  c) Assuming log odds of both models to be the same, then:
+
+  $$\beta_0 = \alpha_{orange_0} - \alpha_{apple_0}$$
+
+  $$\beta_1 = \alpha_{orange_1} - \alpha_{apple_1}$$
+
+  Here, we can set $\alpha_{apple_0} = 0$ and $\alpha_{apple_1} = 0$. Then:
+
+  $$\beta_0 = \alpha_{orange_0} = 2$$
+
+  $$\beta_1 = \alpha_{orange_1} = -1$$
+
+  d) In this case (*On page 196, exercise 12d, the last two estimates should have the subscript “apple” instead of “orange”. Thanks to Sundong Kim.*, [errata link](https://www.statlearning.com/errata-python-edition)):
+
+  $$\beta_0 = 1.2 - 3 = -1.8$$
+
+  $$\beta_1 = -2 - 0.6 = -2.6$$
+
+  e) I don't know how the 2000 test observations fits into the data in this exercise.
