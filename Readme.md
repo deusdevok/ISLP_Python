@@ -1,6 +1,6 @@
 # Introduction to Statistical Learning with Python
 
-Solutions and labs
+Solutions and labs from the book
 
 ## Preview Markdown
 
